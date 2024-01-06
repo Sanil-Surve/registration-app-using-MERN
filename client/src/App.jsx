@@ -31,75 +31,52 @@ function App() {
     setUser({ firstName: " ", lastName: " ", email: " ", password: " " });
   };
 
-  
   return (
-    <div className="container">
-      <div className="container__registration">
-        <h1 className="registration">Registration Form</h1>
+    <div className="form">
+      <div>
+        <h1 className="title">User Registration</h1>
       </div>
-      <div className="input-group">
-        <span className="input-group-text">First and last name</span>
+      <form>
+        <label className="label"> First Name</label>
         <input
-          type="text"
-          aria-label="First name"
-          id="firstname"
-          name="firstName"
+          onChange={(e) => handleChange(e)}
+          className="input"
           value={user.firstName}
-          onChange={(e) => handleChange(e)}
-          className="form-control"
-        />
-        <input
+          name="firstName"
           type="text"
-          aria-label="Last name"
-          id="lastName"
-          name="lastName"
-          value={user.lastName}
-          onChange={(e) => handleChange(e)}
-          className="form-control"
         />
-        <label htmlFor="email" className="form-label">
-          Email address
-        </label>
+
+        <label className="label"> Last Name</label>
         <input
-          type="email"
-          className="form-control"
-          id="email"
-          name="email"
-          value={user.email}
           onChange={(e) => handleChange(e)}
-          placeholder="name@example.com"
+          className="input"
+          value={user.lastName}
+          name="lastName"
+          type="text"
         />
-        <div className="row g-3 align-items-center">
-          <div className="col-auto">
-            <label htmlFor="password" className="col-form-label">
-              Password
-            </label>
-          </div>
-          <div className="col-auto">
-            <input
-              type="password"
-              id="password"
-              name="password"
-              value={user.password}
-              onChange={(e) => handleChange(e)}
-              className="form-control"
-              aria-describedby="passwordHelpInline"
-            />
-          </div>
-          <div className="col-auto">
-            <span id="passwordHelpInline" className="form-text">
-              Must be 8-20 characters long.
-            </span>
-          </div>
-          <button
-            onClick={handleSubmit}
-            className="btn btn-primary"
-            type="submit"
-          >
-            Submit
-          </button>
-        </div>
-      </div>
+
+        <label className="label">Email</label>
+        <input
+          onChange={e => handleChange(e)}
+          className="input"
+          value={user.email}
+          type="email"
+          name="email"
+        />
+
+        <label className="label">Password</label>
+        <input
+          onChange={e => handleChange(e)}
+          className="input"
+          value={user.password}
+          type="password"
+          name="password"
+        />
+
+        <button onClick={handleSubmit} className="btn" type="submit">
+          Submit
+        </button>
+      </form>
     </div>
   );
 }
