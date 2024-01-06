@@ -1,0 +1,16 @@
+* {
+    background-color: rgb(232, 232, 71);
+}
+
+.container {
+    border: 1px solid;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container__registration {
+    display: flex;
+    justify-content: center;
+}
+
+
+
